@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:projekk/bottom_navigation/bottom_navigation.dart';
 import 'package:projekk/login/reusable_widgets/reusable_widget.dart';
-import 'package:projekk/login/screen/home_screen.dart';
 import 'package:projekk/login/screen/signup_screen.dart';
 import 'package:projekk/login/utils/color_utils.dart';
 
@@ -45,7 +45,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailTextContoller.text, password: _passwordTextContoller.text)
                       .then((value) {
                     print("object");
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MaterialYou()));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });

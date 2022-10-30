@@ -1,8 +1,8 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:projekk/bottom_navigation/bottom_navigation.dart';
 import 'package:projekk/login/reusable_widgets/reusable_widget.dart';
-import 'package:projekk/login/screen/home_screen.dart';
 import 'package:projekk/login/utils/color_utils.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -65,7 +65,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           email: _emailTextController.text,
                           password: _passwordTextController.text).then((value) {
                         print("Create New Account");
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MaterialYou()));
                       }).onError((error, stackTrace) {
                         print("Error ${error.toString()}");
                       });
